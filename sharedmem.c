@@ -54,20 +54,15 @@ void* mapearSHM(uint32_t slotId, uint32_t size)
     return 0;
 }
 
-//void leerSHM(void* slot,void* data,uint32_t size)
-void leerSHM(read_params rp)
+void leerSHM(void* slot,void* data,uint32_t size)
 {
 	//Realizamos una copia de los datos del slot a data
-	//memcpy(data, slot, size);
-	memcpy(rp.data, rp.slot, rp.size);
+	memcpy(data, slot, size);
 }
-
-//void escribirSHM(void* slot,void* data,uint32_t size)
-void escribirSHM(write_params wp)
+void escribirSHM(void* slot,void* data,uint32_t size)
 {
 	//Realizamos una copia de los data al slot de memoria
-	//memcpy(slot, data, size);
-	memcpy(wp.slot, wp.data, wp.size);
+	memcpy(slot, data, size);
 }
 
 void borrarSHM(uint32_t slotId, void* slot, uint32_t desObject, uint32_t size)

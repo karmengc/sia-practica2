@@ -12,7 +12,7 @@ typedef struct s_read_params {
 } read_params;
 int crearSHM(uint32_t slotId, uint32_t size);
 void* mapearSHM(uint32_t slotId, uint32_t size);
-void leerSHM(read_params rp);
-void escribirSHM(write_params wp);
+void leerSHM(void* slot,void* data,uint32_t size);
+void escribirSHM(void* slot,void* data,uint32_t size);
 void borrarSHM(uint32_t slotId, void* slot, uint32_t desObject, uint32_t size);
 #endif
